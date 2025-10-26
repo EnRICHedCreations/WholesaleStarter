@@ -280,14 +280,29 @@
             padding: 6px 0;
             font-size: 13px;
             color: #555;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            line-height: 1.6;
         }
 
         .card-features li i {
             color: var(--gold-light);
             font-size: 12px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .card-features a {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline;
+            white-space: nowrap;
+        }
+
+        .card-features a:hover {
+            color: var(--gold-dark);
+            text-decoration: underline;
         }
 
         .card-price {
@@ -527,25 +542,25 @@
                         "Lead Gen: Propwire - $0",
                         "CRM: Google Sheets - $0",
                         "Dialer: Google Voice - $0",
-                        "Education: Wholesailors Academy - $20"
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
                     ],
-                    price: "$20/month"
+                    price: "$0/month"
                 },
                 captain: {
                     name: "Targeted Approach",
                     category: "Door Knock",
                     description: "Doorknock motivated sellers with professional tools and automation.",
                     features: [
-                        "Lead Gen: Xleads - $87",
-                        "CRM: Xleads (GHL) - Included",
-                        "Alternatives: Podio, GoHighLevel",
-                        "Dialer (Single Line): Xleads - Included",
-                        "Alternatives: Mojo Dialer",
-                        "Education: Wholesailors Academy - $20",
-                        "Comping (Non-disclosure States): Propelio - $30",
-                        "Dispo: Investorlift - $TBD"
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$137/month"
+                    price: "$186/month"
                 }
             },
             driving: {
@@ -554,26 +569,28 @@
                     category: "Driving for Dollars",
                     description: "Drive and find ugly homes with basic free tools.",
                     features: [
-                        "Lead Gen: N/A - $0",
+                        "Lead Gen: <a href='https://maximiliandier.com/dealmachine' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>DealMachine</a> - $99/month",
                         "CRM: Google Sheets - $0",
                         "Dialer: Google Voice - $0",
-                        "Education: Wholesailors Academy - $20"
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
                     ],
-                    price: "$20/month"
+                    price: "$0/month"
                 },
                 captain: {
                     name: "Fleet of Vehicles",
                     category: "Driving for Dollars",
                     description: "Hire drivers to find ugly homes with professional tools.",
                     features: [
-                        "Lead Gen: Xleads - $87",
-                        "Alternatives: Batchleads, DealMachine",
-                        "CRM: Xleads - Included",
-                        "Dialer (Single Line): Xleads - Included",
-                        "Comping: Propelio - $30",
-                        "Education: Wholesailors Academy - $20"
+                        "Lead Gen: <a href='https://maximiliandier.com/dealmachine' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>DealMachine</a> - $149/month",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$137/month"
+                    price: "$219/month"
                 }
             },
             agent: {
@@ -584,10 +601,11 @@
                     features: [
                         "Lead Gen: Zillow - $0",
                         "CRM: Google Sheets - $0",
-                        "Dialer: Cellphone - $0",
-                        "Education: Wholesailors Academy - $20"
+                        "Dialer: Google Voice - $0",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
                     ],
-                    price: "$20/month",
+                    price: "$0/month",
                     showVirtual: true
                 },
                 captain: {
@@ -595,17 +613,17 @@
                     category: "Direct to Agent",
                     description: "Mass outreach to agents with professional automation.",
                     features: [
-                        "Lead Gen: Xleads - $87",
-                        "Alternatives: DealMachine, Batchleads",
-                        "CRM: GHL - $15",
-                        "Alternatives: Podio",
-                        "Dialer (Multi Line): Enzo - $100",
-                        "Text Blaster: GHL - Included",
-                        "Email Blaster: GHL - $100",
-                        "Comping: Propelio - $30",
-                        "Education: Wholesailors Academy - $20"
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $180",
+                        "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Email Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$352/month"
+                    price: "$399/month"
                 }
             },
             bandit: {
@@ -617,38 +635,42 @@
                         "Lead Gen: N/A - $0",
                         "CRM: Google Sheets - $0",
                         "Dialer: Google Voice - $0",
-                        "Education: Wholesailors Academy - $20"
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
                     ],
-                    price: "$20/month"
+                    price: "$0/month"
                 },
                 captain: {
                     name: "Outsourced Outlaw",
                     category: "Bandit Signs",
                     description: "Hire people to make signs and place them on street corners.",
                     features: [
-                        "Lead Gen: Xleads - Included",
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
                         "CRM: GHL - $15",
-                        "Dialer (Single Line): Xleads - Included",
-                        "Comping: Propelio - $30",
-                        "Education: Wholesailors Academy - $20"
+                        "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$285/month"
+                    price: "$234/month"
                 }
             },
             coldcall: {
                 starter: {
-                    name: "The Master Closer",
+                    name: "The Single Caller",
                     category: "Cold Call",
                     description: "Cold call motivated sellers yourself with professional tools.",
                     features: [
-                        "Lead Gen: Xleads - $87",
-                        "Skiptracing: Xleads - Included",
-                        "CRM: Xleads - $15",
-                        "Dialer (Power Dialer): Xleads - Included",
-                        "Comping: Propelio - $30",
-                        "Contract Blasting: Contract Cannon - $100"
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Dialer): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
                     ],
-                    price: "$217/month",
+                    price: "$87/month",
                     showVirtual: true,
                     tierLabel: "Quartermaster"
                 },
@@ -657,36 +679,50 @@
                     category: "Cold Call",
                     description: "Hire a team of cold callers to scale your operation.",
                     features: [
-                        "Lead Gen: Xleads - $87",
-                        "Skiptracing: Xleads - Included",
-                        "CRM: GoHighLevel - $15",
-                        "Dialer (Multi Line): Enzo - $100",
-                        "Virtual Assistants: - $1000 each",
-                        "Comping: Propelio - $30",
-                        "Contract Blasting: Contract Cannon - $100"
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219/month with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $180/month",
+                        "Virtual Assistants: - $1000/month each",
+                        "Optional:",
+                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$1232/month"
+                    price: "$1399/month"
                 }
             },
             texting: {
                 starter: {
-                    name: "Not Available",
+                    name: "The Single Texter    ",
                     category: "Texting",
                     description: "No starter plan available for text blasting.",
-                    features: ["Professional tools required", "See Captain tier"],
-                    price: "$999999/month"
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Available Texts within Budget: 1,300 Texts",
+                        "Optional:",
+                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$100/month"
                 },
                 captain: {
                     name: "The Message Master",
                     category: "Texting",
                     description: "Text blast motivated sellers with professional automation.",
                     features: [
-                        "Lead Gen: Xleads - $87",
-                        "Skiptracing: Xleads - Included",
-                        "CRM: Xleads - Included",
-                        "Dialer (Multi Line): Xleads - Included",
-                        "Comping: Propelio - $30",
-                        "Contract Blasting: Contract Cannon - $100"
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Available Texts within Budget: 27,000 Texts",
+                        "Optional:",
+                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
                     price: "$445/month"
                 }
@@ -697,12 +733,15 @@
                     category: "Pay Per Lead",
                     description: "Non-exclusive leads for budget-conscious wholesalers.",
                     features: [
-                        "Lead Gen: iSpeedToLead - $200",
+                        "Lead Gen: <a href='https://maximiliandier.com/istl' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>iSpeedToLead</a> - $200",
                         "Non-exclusive Leads - $29/each",
-                        "CRM: Xleads - $87",
-                        "Dialer: Xleads - Included"
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+
                     ],
-                    price: "$287/month",
+                    price: "$500+/month",
                     showVirtual: true,
                     tierLabel: "Quartermaster"
                 },
@@ -711,33 +750,33 @@
                     category: "Pay Per Lead",
                     description: "Premium exclusive leads for serious wholesalers.",
                     features: [
-                        "Lead Gen: iSpeedToLead - $200",
+                        "Lead Gen: <a href='https://maximiliandier.com/istl' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>iSpeedToLead</a> - $200",
                         "Exclusive Leads - $199/each",
-                        "CRM: Xleads - $87",
-                        "Dialer: Xleads - Included"
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$287/month"
+                    price: "$3000+/month"
                 }
             },
             ppc: {
-                starter: {
-                    name: "Not Available",
-                    category: "Pay Per Click",
-                    description: "PPC requires significant budget and professional management.",
-                    features: ["Professional campaign management required", "See Captain tier"],
-                    price: "$999999/month"
-                },
+
                 captain: {
                     name: "The PPC Admiral",
                     category: "Pay Per Click",
                     description: "Full-service PPC campaign management for serious investors.",
                     features: [
-                        "Lead Gen: Bateman Collective - $2,000",
-                        "Leads - $200/each",
-                        "CRM: Xleads - $87",
-                        "Dialer: Xleads - Included"
+                        "Management: Bateman Collective - $2,000",
+                        "Google Leads - $50-500/each",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$5000/month"
+                    price: "$5000+/month"
                 }
             }
         };
