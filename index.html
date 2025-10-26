@@ -369,11 +369,18 @@
             </div>
 
             <div class="budget-slider-container">
-                <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
                     <div class="budget-display" id="budgetDisplay">$0</div>
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <label for="budgetInput" style="font-size: 14px; color: #666; font-weight: 600;">or enter:</label>
                         <input type="number" id="budgetInput" class="form-input" min="0" max="10000" step="100" placeholder="0" style="width: 150px; padding: 10px; text-align: center;">
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: linear-gradient(135deg, rgba(193, 162, 91, 0.1) 0%, rgba(105, 82, 47, 0.1) 100%); border-radius: 12px; border: 2px solid var(--gold-light);">
+                        <label for="busyToggle" style="font-size: 14px; color: #333; font-weight: 700; cursor: pointer;">I'm FKN Busy!</label>
+                        <label class="switch">
+                            <input type="checkbox" id="busyToggle">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
                 <input type="range" class="budget-slider" id="budgetSlider" min="0" max="10000" value="0" step="100">
@@ -528,7 +535,8 @@
         // State management
         const state = {
             budget: 0,
-            selectedMethods: new Set()
+            selectedMethods: new Set(),
+            isBusy: false
         };
 
         // Software data (placeholder content)
@@ -785,6 +793,7 @@
         const budgetSlider = document.getElementById('budgetSlider');
         const budgetDisplay = document.getElementById('budgetDisplay');
         const budgetInput = document.getElementById('budgetInput');
+        const busyToggle = document.getElementById('busyToggle');
 
         function updateBudget(value) {
             state.budget = parseInt(value) || 0;
@@ -801,6 +810,11 @@
 
         budgetInput.addEventListener('input', function() {
             updateBudget(this.value);
+        });
+
+        busyToggle.addEventListener('change', function() {
+            state.isBusy = this.checked;
+            renderSoftwareCards();
         });
 
         function updateMethodAvailability() {
@@ -843,6 +857,126 @@
         function renderSoftwareCards() {
             const container = document.getElementById('softwareCards');
 
+            // If "I'm FKN Busy!" is enabled, show predefined cards
+            if (state.isBusy) {
+                let html = '';
+
+                // Agent: Starter + Captain
+                ['starter', 'captain'].forEach(tier => {
+                    const card = softwareData.agent[tier];
+                    const showVirtual = tier === 'captain' || card.showVirtual;
+                    const tierLabel = card.tierLabel || tier;
+
+                    html += `
+                        <div class="software-card ${tier}">
+                            ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
+                            <span class="card-tier ${tier}">${tierLabel}</span>
+                            <div class="card-category">${card.category}</div>
+                            <div class="card-name">${card.name}</div>
+                            <div class="card-description">${card.description}</div>
+                            <ul class="card-features">
+                                ${card.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            </ul>
+                            <div class="card-price">${card.price}</div>
+                        </div>
+                    `;
+                });
+
+                // Bandit: Starter + Captain
+                ['starter', 'captain'].forEach(tier => {
+                    const card = softwareData.bandit[tier];
+                    const showVirtual = tier === 'captain' || card.showVirtual;
+                    const tierLabel = card.tierLabel || tier;
+
+                    html += `
+                        <div class="software-card ${tier}">
+                            ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
+                            <span class="card-tier ${tier}">${tierLabel}</span>
+                            <div class="card-category">${card.category}</div>
+                            <div class="card-name">${card.name}</div>
+                            <div class="card-description">${card.description}</div>
+                            <ul class="card-features">
+                                ${card.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            </ul>
+                            <div class="card-price">${card.price}</div>
+                        </div>
+                    `;
+                });
+
+                // Cold Call: Captain only
+                const coldcallCard = softwareData.coldcall.captain;
+                html += `
+                    <div class="software-card captain">
+                        <div class="virtual-ribbon">Virtual</div>
+                        <span class="card-tier captain">captain</span>
+                        <div class="card-category">${coldcallCard.category}</div>
+                        <div class="card-name">${coldcallCard.name}</div>
+                        <div class="card-description">${coldcallCard.description}</div>
+                        <ul class="card-features">
+                            ${coldcallCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                        </ul>
+                        <div class="card-price">${coldcallCard.price}</div>
+                    </div>
+                `;
+
+                // Texting: Captain only
+                const textingCard = softwareData.texting.captain;
+                html += `
+                    <div class="software-card captain">
+                        <div class="virtual-ribbon">Virtual</div>
+                        <span class="card-tier captain">captain</span>
+                        <div class="card-category">${textingCard.category}</div>
+                        <div class="card-name">${textingCard.name}</div>
+                        <div class="card-description">${textingCard.description}</div>
+                        <ul class="card-features">
+                            ${textingCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                        </ul>
+                        <div class="card-price">${textingCard.price}</div>
+                    </div>
+                `;
+
+                // PPL: Starter + Captain
+                ['starter', 'captain'].forEach(tier => {
+                    const card = softwareData.ppl[tier];
+                    const showVirtual = tier === 'captain' || card.showVirtual;
+                    const tierLabel = card.tierLabel || tier;
+
+                    html += `
+                        <div class="software-card ${tier}">
+                            ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
+                            <span class="card-tier ${tier}">${tierLabel}</span>
+                            <div class="card-category">${card.category}</div>
+                            <div class="card-name">${card.name}</div>
+                            <div class="card-description">${card.description}</div>
+                            <ul class="card-features">
+                                ${card.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            </ul>
+                            <div class="card-price">${card.price}</div>
+                        </div>
+                    `;
+                });
+
+                // PPC: Captain only
+                const ppcCard = softwareData.ppc.captain;
+                html += `
+                    <div class="software-card captain">
+                        <div class="virtual-ribbon">Virtual</div>
+                        <span class="card-tier captain">captain</span>
+                        <div class="card-category">${ppcCard.category}</div>
+                        <div class="card-name">${ppcCard.name}</div>
+                        <div class="card-description">${ppcCard.description}</div>
+                        <ul class="card-features">
+                            ${ppcCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                        </ul>
+                        <div class="card-price">${ppcCard.price}</div>
+                    </div>
+                `;
+
+                container.innerHTML = html;
+                return;
+            }
+
+            // Normal flow: check if methods are selected
             if (state.selectedMethods.size === 0) {
                 container.innerHTML = `
                     <div class="empty-state">
