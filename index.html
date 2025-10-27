@@ -225,6 +225,10 @@
             border-left: 4px solid #4CAF50;
         }
 
+        .software-card.intermediate {
+            border-left: 4px solid #2196F3;
+        }
+
         .software-card.captain {
             border-left: 4px solid var(--gold-light);
         }
@@ -241,6 +245,11 @@
 
         .card-tier.starter {
             background: #4CAF50;
+            color: white;
+        }
+
+        .card-tier.intermediate {
+            background: #2196F3;
             color: white;
         }
 
@@ -344,6 +353,328 @@
             font-size: 16px;
             font-weight: 600;
         }
+
+        /* Hero Video Section */
+        .hero-video-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .hero-video-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hero-video-description {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background: #2a2a2a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #444;
+        }
+
+        .video-placeholder-text {
+            color: #999;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        /* Academy Advertisement */
+        .academy-ad {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(193, 162, 91, 0.1) 0%, rgba(105, 82, 47, 0.1) 100%);
+            border: 3px solid var(--gold-light);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(182, 152, 86, 0.2);
+        }
+
+        .academy-ad:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(193, 162, 91, 0.2) 0%, rgba(105, 82, 47, 0.2) 100%);
+            box-shadow: 0 8px 25px rgba(182, 152, 86, 0.4);
+        }
+
+        .academy-logo {
+            height: 70px;
+            width: auto;
+            border-radius: 12px;
+        }
+
+        .academy-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .academy-cta {
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .academy-price {
+            background: linear-gradient(45deg, #C1A25B, #69522F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            border-top: 2px solid var(--gold-light);
+            margin-top: 50px;
+        }
+
+        .footer-ad-section {
+            background: linear-gradient(135deg, #1a1410 0%, #2a1f15 100%);
+            padding: 60px 20px;
+            border-bottom: 1px solid rgba(193, 162, 91, 0.2);
+        }
+
+        .footer-ad-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .footer-ad-left {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .footer-academy-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(182, 152, 86, 0.4);
+            border: 2px solid var(--gold-light);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .footer-academy-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(182, 152, 86, 0.6);
+        }
+
+        .footer-ad-text {
+            flex: 1;
+        }
+
+        .footer-ad-title {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #C1A25B, #69522F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-ad-description {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .footer-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-icon {
+            color: var(--gold-light);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .footer-ad-right {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-cta-box {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(182, 152, 86, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .footer-price-tag {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .footer-price-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-price {
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .footer-price-subtext {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-cta-btn {
+            display: block;
+            background: white;
+            color: var(--gold-dark);
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+        }
+
+        .footer-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            background: #f8f8f8;
+        }
+
+        .footer-guarantee {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-bottom {
+            padding: 30px 20px;
+            text-align: center;
+            background: var(--dark-gray);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 768px) {
+            .academy-ad {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-ad-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-ad-left {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-academy-logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .footer-ad-title {
+                font-size: 24px;
+            }
+
+            .footer-features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-cta-box {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -356,11 +687,32 @@
                 </h1>
                 <div class="tagline">Build Your Perfect Software Stack</div>
             </div>
+            <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank" class="academy-ad">
+                <img src="images/Wholesailors-Academy-V2.webp" alt="Wholesailors Academy" class="academy-logo">
+                <div class="academy-text">
+                    <div class="academy-cta">Join the Wholesailors Academy</div>
+                    <div class="academy-price">Just $0.50/day</div>
+                </div>
+            </a>
         </div>
     </header>
 
     <!-- Main Container -->
     <div class="container">
+        <!-- Hero Video Section -->
+        <div class="hero-video-section">
+            <h2 class="hero-video-title">Build Your Perfect Wholesaling Stack</h2>
+            <p class="hero-video-description">
+                Watch this quick guide to learn how to select the right tools and software for your real estate wholesaling business based on your budget and marketing strategy.
+            </p>
+            <div class="video-container">
+                <p class="video-placeholder-text">Video Coming Soon</p>
+                <!-- Uncomment and add YouTube video URL when ready:
+                <iframe src="YOUR_YOUTUBE_EMBED_URL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                -->
+            </div>
+        </div>
+
         <!-- Budget Section -->
         <div class="budget-section">
             <div class="budget-header">
@@ -560,7 +912,7 @@
                     category: "Door Knock",
                     description: "Doorknock motivated sellers with professional tools and automation.",
                     features: [
-                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87 with coupon 10OFF",
                         "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Optional:",
@@ -568,7 +920,7 @@
                         "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30",
                         "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$219/month"
+                    price: "$87/month"
                 }
             },
             driving: {
@@ -577,7 +929,7 @@
                     category: "Driving for Dollars",
                     description: "Drive and find ugly homes with basic free tools.",
                     features: [
-                        "Lead Gen: <a href='https://maximiliandier.com/dealmachine' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>DealMachine</a> - $99/month",
+                        "Lead Gen: Propwire - $0",
                         "CRM: Google Sheets - $0",
                         "Dialer: Google Voice - $0",
                         "Optional:",
@@ -585,20 +937,33 @@
                     ],
                     price: "$0/month"
                 },
+                intermediate: {
+                    name: "Flyin' Solo",
+                    category: "Driving for Dollars",
+                    description: "Virtually Drive and find ugly homes with basic free tools.",
+                    features: [
+                        "Lead Gen: Deal Machine Pro - $120",
+                        "CRM: Google Sheets - $0",
+                        "Dialer: Google Voice - $0",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$120/month"
+                },
                 captain: {
                     name: "Fleet of Vehicles",
                     category: "Driving for Dollars",
                     description: "Hire drivers to find ugly homes with professional tools.",
                     features: [
-                        "Lead Gen: <a href='https://maximiliandier.com/dealmachine' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>DealMachine</a> - $149/month",
-                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Lead Gen: <a href='https://maximiliandier.com/dealmachine' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Deal Machine Pro</a> - $120/month",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87",
                         "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Optional:",
-                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
                         "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
                         "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$219/month"
+                    price: "$207/month"
                 }
             },
             agent: {
@@ -621,17 +986,17 @@
                     category: "Direct to Agent",
                     description: "Mass outreach to agents with professional automation.",
                     features: [
-                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
+                        "Lead Gen: <a href='https://maximiliandier.com/batchleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Batchleads</a> - $120",
                         "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $180",
+                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $200",
                         "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Email Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Optional:",
-                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
                         "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
                         "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$399/month"
+                    price: "$320/month"
                 }
             },
             bandit: {
@@ -653,15 +1018,15 @@
                     category: "Bandit Signs",
                     description: "Hire people to make signs and place them on street corners.",
                     features: [
-                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
-                        "CRM: GHL - $15",
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $87 with coupon 10OFF",
+                        "CRM: Xleads - Included",
                         "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Optional:",
-                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
                         "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
                         "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$234/month"
+                    price: "$87/month"
                 }
             },
             coldcall: {
@@ -675,12 +1040,12 @@
                         "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Dialer (Power Dialer): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Optional:",
-                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
                         "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
                     ],
                     price: "$87/month",
                     showVirtual: true,
-                    tierLabel: "Quartermaster"
+                    tierLabel: "Starter"
                 },
                 captain: {
                     name: "The Virtual Commander",
@@ -690,14 +1055,14 @@
                         "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219/month with coupon 10OFF",
                         "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $180/month",
+                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $200/month",
                         "Virtual Assistants: - $1000/month each",
                         "Optional:",
-                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
                         "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
                         "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$1399/month"
+                    price: "$1500/month"
                 }
             },
             texting: {
@@ -710,9 +1075,9 @@
                         "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                        "Available Texts within Budget: 1,300 Texts",
+                        "Cost per Text: $0.01",
                         "Optional:",
-                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
                         "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
                     ],
                     price: "$100/month"
@@ -726,13 +1091,13 @@
                         "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
                         "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                        "Available Texts within Budget: 27,000 Texts",
+                        "Cost per Text: $0.01",
                         "Optional:",
-                        "Comping: <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
                         "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
                         "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
                     ],
-                    price: "$445/month"
+                    price: "$500/month"
                 }
             },
             ppl: {
@@ -751,7 +1116,7 @@
                     ],
                     price: "$500+/month",
                     showVirtual: true,
-                    tierLabel: "Quartermaster"
+                    tierLabel: "Starter"
                 },
                 captain: {
                     name: "The Lead Captain",
@@ -776,7 +1141,7 @@
                     category: "Pay Per Click",
                     description: "Full-service PPC campaign management for serious investors.",
                     features: [
-                        "Management: Bateman Collective - $2,000",
+                        "Management: <a href='https://get.batemancollective.com/relp/?_from=maximilian44' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Bateman Collective</a> - $2,000",
                         "Google Leads - $50-500/each",
                         "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
                         "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
@@ -875,7 +1240,12 @@
                             <div class="card-category">${card.category}</div>
                             <div class="card-description">${card.description}</div>
                             <ul class="card-features">
-                                ${card.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                                ${card.features.map(feature => {
+                                    if (feature.trim() === 'Optional:') {
+                                        return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
+                                    }
+                                    return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+                                }).join('')}
                             </ul>
                             <div class="card-price">${card.price}</div>
                         </div>
@@ -896,7 +1266,12 @@
                             <div class="card-category">${card.category}</div>
                             <div class="card-description">${card.description}</div>
                             <ul class="card-features">
-                                ${card.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                                ${card.features.map(feature => {
+                                    if (feature.trim() === 'Optional:') {
+                                        return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
+                                    }
+                                    return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+                                }).join('')}
                             </ul>
                             <div class="card-price">${card.price}</div>
                         </div>
@@ -949,7 +1324,12 @@
                             <div class="card-category">${card.category}</div>
                             <div class="card-description">${card.description}</div>
                             <ul class="card-features">
-                                ${card.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                                ${card.features.map(feature => {
+                                    if (feature.trim() === 'Optional:') {
+                                        return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
+                                    }
+                                    return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+                                }).join('')}
                             </ul>
                             <div class="card-price">${card.price}</div>
                         </div>
@@ -994,14 +1374,31 @@
                 if (!software) return;
 
                 // Determine which tier to show based on budget
-                // Parse the captain price to determine threshold
-                const captainPriceStr = software.captain.price.replace(/[^0-9]/g, '');
-                const captainPrice = parseInt(captainPriceStr);
-                const tier = state.budget >= captainPrice ? 'captain' : 'starter';
-                const card = software[tier];
+                let tier = 'starter';
+                let card = software.starter;
 
-                // Show virtual ribbon on captain tier, or if starter tier has showVirtual flag
-                const showVirtual = tier === 'captain' || (tier === 'starter' && card.showVirtual);
+                // Check if intermediate tier exists
+                if (software.intermediate) {
+                    const intermediatePriceStr = software.intermediate.price.replace(/[^0-9]/g, '');
+                    const intermediatePrice = parseInt(intermediatePriceStr);
+                    if (state.budget >= intermediatePrice) {
+                        tier = 'intermediate';
+                        card = software.intermediate;
+                    }
+                }
+
+                // Check if captain tier exists and budget is high enough
+                if (software.captain) {
+                    const captainPriceStr = software.captain.price.replace(/[^0-9]/g, '');
+                    const captainPrice = parseInt(captainPriceStr);
+                    if (state.budget >= captainPrice) {
+                        tier = 'captain';
+                        card = software.captain;
+                    }
+                }
+
+                // Show virtual ribbon on captain tier, or if card has showVirtual flag
+                const showVirtual = tier === 'captain' || card.showVirtual;
 
                 // Use custom tier label if provided, otherwise use the tier name
                 const tierLabel = card.tierLabel || tier;
@@ -1014,7 +1411,12 @@
                         <div class="card-category">${card.category}</div>
                         <div class="card-description">${card.description}</div>
                         <ul class="card-features">
-                            ${card.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                            ${card.features.map(feature => {
+                                if (feature.trim() === 'Optional:') {
+                                    return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
+                                }
+                                return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+                            }).join('')}
                         </ul>
                         <div class="card-price">${card.price}</div>
                     </div>
@@ -1027,5 +1429,60 @@
         // Initialize on load
         updateMethodAvailability();
     </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-ad-section">
+            <div class="footer-ad-content">
+                <div class="footer-ad-left">
+                    <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank">
+                        <img src="images/Wholesailors-Academy-V2.webp" alt="Wholesailors Academy" class="footer-academy-logo">
+                    </a>
+                    <div class="footer-ad-text">
+                        <h3 class="footer-ad-title">Ready to Master Wholesaling?</h3>
+                        <p class="footer-ad-description">Join 1,000+ students learning proven strategies to flip houses to hedge funds, build portfolios, and scale their real estate wholesaling business.</p>
+                        <div class="footer-features">
+                            <div class="footer-feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Live Weekly Coaching</span>
+                            </div>
+                            <div class="footer-feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Private Community Access</span>
+                            </div>
+                            <div class="footer-feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Proven Deal Scripts & Templates</span>
+                            </div>
+                            <div class="footer-feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Exclusive Buyer Network</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-ad-right">
+                    <div class="footer-cta-box">
+                        <div class="footer-price-tag">
+                            <span class="footer-price-label">START TODAY FOR ONLY</span>
+                            <span class="footer-price">$0.50/day</span>
+                            <span class="footer-price-subtext">That's just $15/month</span>
+                        </div>
+                        <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank" class="footer-cta-btn">
+                            Join Wholesailors Academy Now →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-content">
+                <div class="footer-logo">Wholesale Starter</div>
+                <p class="footer-text">
+                    © 2025 Wholesailors Academy. All rights reserved. | Wholesale Starter - Build Your Perfect Software Stack
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
