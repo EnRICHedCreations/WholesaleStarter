@@ -1,1439 +1,1268 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Wholesale Starter - Software Stack Builder</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale Starter - Software Stack Builder</title>
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6ZJ0F0H32"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6ZJ0F0H32"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'G-V6ZJ0F0H32');
-        </script>
+      gtag('config', 'G-V6ZJ0F0H32');
+    </script>
 
-        <!-- Microsoft Clarity-->
-        <script type="text/javascript">
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "ty1nyhq476");
-        </script>
+    <!-- Microsoft Clarity-->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ty1nyhq476");
+    </script>
 
-        <!-- Google Fonts - Poppins -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <!-- Google Fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
 
-        <!-- Font Awesome Icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-        <style>
-            /* Additional styles for the matchmaker */
-            .budget-section {
-                background: white;
-                border-radius: 16px;
-                padding: 32px;
-                margin-bottom: 30px;
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-            }
+    <style>
+        /* Additional styles for the matchmaker */
+        .budget-section {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
 
-            .budget-header {
-                text-align: center;
-                margin-bottom: 30px;
-            }
+        .budget-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-            .budget-header h2 {
-                font-size: 28px;
-                font-weight: 800;
-                color: #333;
-                margin-bottom: 10px;
-            }
+        .budget-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-            .budget-header p {
-                color: #666;
-                font-size: 15px;
-            }
+        .budget-header p {
+            color: #666;
+            font-size: 15px;
+        }
 
-            .budget-slider-container {
-                max-width: 600px;
-                margin: 0 auto 40px;
-            }
+        .budget-slider-container {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
 
-            .budget-display {
-                text-align: center;
-                font-size: 48px;
-                font-weight: 700;
-                background: linear-gradient(45deg, #C1A25B, #69522F);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                margin-bottom: 20px;
-            }
+        .budget-display {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #C1A25B, #69522F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
 
-            .budget-slider {
-                width: 100%;
-                height: 8px;
-                border-radius: 5px;
-                background: #e0e0e0;
-                outline: none;
-                -webkit-appearance: none;
-            }
+        .budget-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #e0e0e0;
+            outline: none;
+            -webkit-appearance: none;
+        }
 
-            .budget-slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
-                cursor: pointer;
-                box-shadow: 0 2px 8px rgba(182, 152, 86, 0.5);
-            }
+        .budget-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(182, 152, 86, 0.5);
+        }
 
-            .budget-slider::-moz-range-thumb {
-                width: 24px;
-                height: 24px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
-                cursor: pointer;
-                border: none;
-                box-shadow: 0 2px 8px rgba(182, 152, 86, 0.5);
-            }
+        .budget-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(182, 152, 86, 0.5);
+        }
 
-            .budget-labels {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 10px;
-                font-size: 13px;
-                color: #666;
-                font-weight: 600;
-            }
+        .budget-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #666;
+            font-weight: 600;
+        }
 
-            .methods-section {
-                margin-bottom: 40px;
-            }
+        .methods-section {
+            margin-bottom: 40px;
+        }
 
-            .method-category {
-                margin-bottom: 25px;
-            }
+        .method-category {
+            margin-bottom: 25px;
+        }
 
-            .category-title {
-                font-size: 16px;
-                font-weight: 700;
-                color: #333;
-                margin-bottom: 12px;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
+        .category-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-            .category-badge {
-                background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
-                color: white;
-                padding: 4px 12px;
-                border-radius: 20px;
-                font-size: 12px;
-                font-weight: 700;
-            }
+        .category-badge {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
 
-            .method-banners {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 15px;
-            }
+        .method-banners {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
 
-            .method-banner {
-                background: #f5f5f5;
-                border: 2px solid #e0e0e0;
-                border-radius: 12px;
-                padding: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                transition: all 0.3s;
-                cursor: pointer;
-            }
+        .method-banner {
+            background: #f5f5f5;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
 
-            .method-banner.active {
-                background: linear-gradient(135deg, rgba(193, 162, 91, 0.1) 0%, rgba(105, 82, 47, 0.1) 100%);
-                border-color: var(--gold-light);
-                box-shadow: 0 4px 15px rgba(182, 152, 86, 0.2);
-            }
+        .method-banner.active {
+            background: linear-gradient(135deg, rgba(193, 162, 91, 0.1) 0%, rgba(105, 82, 47, 0.1) 100%);
+            border-color: var(--gold-light);
+            box-shadow: 0 4px 15px rgba(182, 152, 86, 0.2);
+        }
 
-            .method-banner.disabled {
-                opacity: 0.5;
-                cursor: not-allowed;
-            }
+        .method-banner.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
-            .method-info {
-                flex: 1;
-            }
+        .method-info {
+            flex: 1;
+        }
 
-            .method-name {
-                font-size: 15px;
-                font-weight: 700;
-                color: #333;
-                margin-bottom: 4px;
-            }
+        .method-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 4px;
+        }
 
-            .method-cost {
-                font-size: 12px;
-                color: #666;
-            }
+        .method-cost {
+            font-size: 12px;
+            color: #666;
+        }
 
-            .method-controls {
-                display: flex;
-                gap: 8px;
-            }
+        .method-controls {
+            display: flex;
+            gap: 8px;
+        }
 
-            .method-btn {
-                width: 32px;
-                height: 32px;
-                border: 2px solid var(--gold-light);
-                background: white;
-                border-radius: 6px;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 16px;
-                font-weight: 700;
-                color: var(--gold-dark);
-                transition: all 0.3s;
-            }
+        .method-btn {
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--gold-light);
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--gold-dark);
+            transition: all 0.3s;
+        }
 
-            .method-btn:hover:not(:disabled) {
-                background: var(--gold-light);
-                color: white;
-            }
+        .method-btn:hover:not(:disabled) {
+            background: var(--gold-light);
+            color: white;
+        }
 
-            .method-btn:disabled {
-                opacity: 0.3;
-                cursor: not-allowed;
-            }
+        .method-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
 
-            .software-cards {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 20px;
-                margin-top: 30px;
-            }
+        .software-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-            .software-card {
-                background: white;
-                border: 2px solid #e0e0e0;
-                border-radius: 12px;
-                padding: 24px;
-                transition: all 0.3s;
-                animation: fadeIn 0.5s ease;
-                position: relative;
-                overflow: hidden;
-            }
+        .software-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+            animation: fadeIn 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-            .software-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 8px 25px rgba(182, 152, 86, 0.3);
-                border-color: var(--gold-light);
-            }
+        .software-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(182, 152, 86, 0.3);
+            border-color: var(--gold-light);
+        }
 
-            .software-card.starter {
-                border-left: 4px solid #4CAF50;
-            }
+        .software-card.starter {
+            border-left: 4px solid #4CAF50;
+        }
 
-            .software-card.intermediate {
-                border-left: 4px solid #2196F3;
-            }
+        .software-card.intermediate {
+            border-left: 4px solid #2196F3;
+        }
 
-            .software-card.captain {
-                border-left: 4px solid var(--gold-light);
-            }
+        .software-card.captain {
+            border-left: 4px solid var(--gold-light);
+        }
 
-            .card-tier {
-                display: inline-block;
-                padding: 4px 12px;
-                border-radius: 20px;
-                font-size: 11px;
-                font-weight: 700;
-                text-transform: uppercase;
-                margin-bottom: 12px;
-            }
+        .card-tier {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
 
-            .card-tier.starter {
-                background: #4CAF50;
-                color: white;
-            }
+        .card-tier.starter {
+            background: #4CAF50;
+            color: white;
+        }
 
-            .card-tier.intermediate {
-                background: #2196F3;
-                color: white;
-            }
+        .card-tier.intermediate {
+            background: #2196F3;
+            color: white;
+        }
 
-            .card-tier.captain {
-                background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
-                color: white;
-            }
+        .card-tier.captain {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+            color: white;
+        }
 
-            .card-category {
-                font-size: 20px;
-                color: #333;
-                font-weight: 700;
-                margin-bottom: 12px;
-            }
+        .card-category {
+            font-size: 20px;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
 
-            .card-name {
-                font-size: 12px;
-                font-weight: 600;
-                color: #666;
-                margin-bottom: 8px;
-            }
+        .card-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 8px;
+        }
 
-            .card-description {
-                font-size: 14px;
-                color: #666;
-                line-height: 1.6;
-                margin-bottom: 16px;
-            }
+        .card-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
 
-            .card-features {
-                list-style: none;
-                padding: 0;
-                margin: 0 0 16px 0;
-            }
+        .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
 
-            .card-features li {
-                padding: 6px 0;
-                font-size: 13px;
-                color: #555;
-                line-height: 1.6;
-            }
+        .card-features li {
+            padding: 6px 0;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
 
-            .card-features li i {
-                color: var(--gold-light);
-                font-size: 12px;
-                margin-right: 8px;
-                display: inline-block;
-                vertical-align: middle;
-            }
+        .card-features li i {
+            color: var(--gold-light);
+            font-size: 12px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
 
-            .card-features a {
-                color: var(--gold-light);
-                text-decoration: none;
-                font-weight: 600;
-                transition: all 0.3s;
-                display: inline;
-                white-space: nowrap;
-            }
+        .card-features a {
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline;
+            white-space: nowrap;
+        }
 
-            .card-features a:hover {
-                color: var(--gold-dark);
-                text-decoration: underline;
-            }
+        .card-features a:hover {
+            color: var(--gold-dark);
+            text-decoration: underline;
+        }
 
-            .card-price {
-                font-size: 24px;
-                font-weight: 700;
-                color: var(--gold-dark);
-                margin-bottom: 12px;
-            }
+        .card-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold-dark);
+            margin-bottom: 12px;
+        }
 
-            .virtual-ribbon {
-                position: absolute;
-                top: 20px;
-                right: -35px;
-                background: #dc3545;
-                color: white;
-                padding: 8px 40px;
-                font-size: 12px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                transform: rotate(45deg);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-                z-index: 10;
-            }
+        .virtual-ribbon {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: #dc3545;
+            color: white;
+            padding: 8px 40px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: rotate(45deg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
 
-            .empty-state {
-                text-align: center;
-                padding: 60px 20px;
-                color: #999;
-            }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
 
-            .empty-state i {
-                font-size: 64px;
-                margin-bottom: 20px;
-                color: #ddd;
-            }
+        .empty-state i {
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
 
-            .empty-state p {
-                font-size: 16px;
-                font-weight: 600;
-            }
+        .empty-state p {
+            font-size: 16px;
+            font-weight: 600;
+        }
 
-            /* Hero Video Section */
-            .hero-video-section {
-                background: white;
-                border-radius: 16px;
-                padding: 40px 32px;
-                margin-bottom: 30px;
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-                text-align: center;
-            }
+        /* Hero Video Section */
+        .hero-video-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
 
-            .hero-video-title {
-                font-size: 28px;
-                font-weight: 800;
-                color: #333;
-                margin-bottom: 10px;
-            }
+        .hero-video-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-            .hero-video-description {
-                color: #666;
-                font-size: 15px;
-                margin-bottom: 30px;
-                max-width: 700px;
-                margin-left: auto;
-                margin-right: auto;
-            }
+        .hero-video-description {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-            .video-container {
-                position: relative;
-                width: 100%;
-                max-width: 800px;
-                margin: 0 auto;
-                aspect-ratio: 16/9;
-                background: #2a2a2a;
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 2px solid #444;
-            }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background: #2a2a2a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #444;
+        }
 
-            .video-placeholder-text {
-                color: #999;
-                font-size: 18px;
-                font-weight: 600;
-            }
+        .video-placeholder-text {
+            color: #999;
+            font-size: 18px;
+            font-weight: 600;
+        }
 
-            .video-container iframe {
-                width: 100%;
-                height: 100%;
-                border-radius: 12px;
-            }
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
 
-            /* Academy Advertisement */
+        /* Academy Advertisement */
+        .academy-ad {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, rgba(193, 162, 91, 0.1) 0%, rgba(105, 82, 47, 0.1) 100%);
+            border: 3px solid var(--gold-light);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(182, 152, 86, 0.2);
+        }
+
+        .academy-ad:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(193, 162, 91, 0.2) 0%, rgba(105, 82, 47, 0.2) 100%);
+            box-shadow: 0 8px 25px rgba(182, 152, 86, 0.4);
+        }
+
+        .academy-logo {
+            height: 70px;
+            width: auto;
+            border-radius: 12px;
+        }
+
+        .academy-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .academy-cta {
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .academy-price {
+            background: linear-gradient(45deg, #C1A25B, #69522F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            border-top: 2px solid var(--gold-light);
+            margin-top: 50px;
+        }
+
+        .footer-ad-section {
+            background: linear-gradient(135deg, #1a1410 0%, #2a1f15 100%);
+            padding: 60px 20px;
+            border-bottom: 1px solid rgba(193, 162, 91, 0.2);
+        }
+
+        .footer-ad-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .footer-ad-left {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .footer-academy-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(182, 152, 86, 0.4);
+            border: 2px solid var(--gold-light);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .footer-academy-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(182, 152, 86, 0.6);
+        }
+
+        .footer-ad-text {
+            flex: 1;
+        }
+
+        .footer-ad-title {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #C1A25B, #69522F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-ad-description {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .footer-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-icon {
+            color: var(--gold-light);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .footer-ad-right {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-cta-box {
+            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(182, 152, 86, 0.5);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .footer-price-tag {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .footer-price-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-price {
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .footer-price-subtext {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-cta-btn {
+            display: block;
+            background: white;
+            color: var(--gold-dark);
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.3px;
+            margin-bottom: 16px;
+        }
+
+        .footer-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            background: #f8f8f8;
+        }
+
+        .footer-guarantee {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-bottom {
+            padding: 30px 20px;
+            text-align: center;
+            background: var(--dark-gray);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 768px) {
             .academy-ad {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-                padding: 12px 24px;
-                background: linear-gradient(135deg, rgba(193, 162, 91, 0.1) 0%, rgba(105, 82, 47, 0.1) 100%);
-                border: 3px solid var(--gold-light);
-                border-radius: 16px;
-                text-decoration: none;
-                transition: all 0.3s;
-                box-shadow: 0 4px 15px rgba(182, 152, 86, 0.2);
-            }
-
-            .academy-ad:hover {
-                transform: translateY(-2px);
-                background: linear-gradient(135deg, rgba(193, 162, 91, 0.2) 0%, rgba(105, 82, 47, 0.2) 100%);
-                box-shadow: 0 8px 25px rgba(182, 152, 86, 0.4);
-            }
-
-            .academy-logo {
-                height: 70px;
-                width: auto;
-                border-radius: 12px;
-            }
-
-            .academy-text {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-            }
-
-            .academy-cta {
-                color: white;
-                font-size: 18px;
-                font-weight: 700;
-                letter-spacing: 0.5px;
-            }
-
-            .academy-price {
-                background: linear-gradient(45deg, #C1A25B, #69522F);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                font-size: 16px;
-                font-weight: 700;
-                letter-spacing: 0.5px;
-            }
-
-            /* Footer */
-            footer {
-                background: var(--dark-gray);
-                border-top: 2px solid var(--gold-light);
-                margin-top: 50px;
-            }
-
-            .footer-ad-section {
-                background: linear-gradient(135deg, #1a1410 0%, #2a1f15 100%);
-                padding: 60px 20px;
-                border-bottom: 1px solid rgba(193, 162, 91, 0.2);
+                width: 100%;
+                justify-content: center;
             }
 
             .footer-ad-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                display: grid;
-                grid-template-columns: 1.5fr 1fr;
-                gap: 60px;
-                align-items: center;
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
 
             .footer-ad-left {
-                display: flex;
-                gap: 30px;
-                align-items: flex-start;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
 
             .footer-academy-logo {
-                width: 60px;
-                height: 60px;
-                border-radius: 12px;
-                box-shadow: 0 8px 30px rgba(182, 152, 86, 0.4);
-                border: 2px solid var(--gold-light);
-                transition: transform 0.3s, box-shadow 0.3s;
-            }
-
-            .footer-academy-logo:hover {
-                transform: scale(1.05);
-                box-shadow: 0 10px 40px rgba(182, 152, 86, 0.6);
-            }
-
-            .footer-ad-text {
-                flex: 1;
+                width: 50px;
+                height: 50px;
             }
 
             .footer-ad-title {
-                font-size: 32px;
-                font-weight: 700;
-                background: linear-gradient(45deg, #C1A25B, #69522F);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                margin-bottom: 12px;
-                letter-spacing: 0.5px;
-            }
-
-            .footer-ad-description {
-                color: #ccc;
-                font-size: 16px;
-                line-height: 1.6;
-                margin-bottom: 24px;
-                letter-spacing: 0.3px;
+                font-size: 24px;
             }
 
             .footer-features {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-
-            .footer-feature {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                color: white;
-                font-size: 14px;
-                letter-spacing: 0.3px;
-            }
-
-            .feature-icon {
-                color: var(--gold-light);
-                font-weight: 700;
-                font-size: 18px;
-            }
-
-            .footer-ad-right {
-                display: flex;
-                justify-content: center;
+                grid-template-columns: 1fr;
             }
 
             .footer-cta-box {
-                background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-light) 100%);
-                padding: 40px 30px;
-                border-radius: 16px;
-                text-align: center;
-                box-shadow: 0 12px 40px rgba(182, 152, 86, 0.5);
-                border: 3px solid rgba(255, 255, 255, 0.2);
-                width: 100%;
-                max-width: 350px;
+                max-width: 100%;
             }
-
-            .footer-price-tag {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-                margin-bottom: 24px;
-            }
-
-            .footer-price-label {
-                color: rgba(255, 255, 255, 0.9);
-                font-size: 12px;
-                font-weight: 700;
-                letter-spacing: 1.5px;
-            }
-
-            .footer-price {
-                color: white;
-                font-size: 48px;
-                font-weight: 700;
-                line-height: 1;
-                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-                letter-spacing: 0.5px;
-            }
-
-            .footer-price-subtext {
-                color: rgba(255, 255, 255, 0.8);
-                font-size: 14px;
-                font-weight: 600;
-                letter-spacing: 0.3px;
-            }
-
-            .footer-cta-btn {
-                display: block;
-                background: white;
-                color: var(--gold-dark);
-                padding: 16px 28px;
-                border-radius: 10px;
-                font-size: 16px;
-                font-weight: 700;
-                text-decoration: none;
-                transition: all 0.3s;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-                letter-spacing: 0.3px;
-                margin-bottom: 16px;
-            }
-
-            .footer-cta-btn:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-                background: #f8f8f8;
-            }
-
-            .footer-guarantee {
-                color: rgba(255, 255, 255, 0.9);
-                font-size: 12px;
-                font-weight: 600;
-                margin: 0;
-                letter-spacing: 0.3px;
-            }
-
-            .footer-bottom {
-                padding: 30px 20px;
-                text-align: center;
-                background: var(--dark-gray);
-            }
-
-            .footer-content {
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .footer-text {
-                color: #999;
-                font-size: 13px;
-                margin-bottom: 8px;
-                letter-spacing: 0.3px;
-            }
-
-            .footer-logo {
-                font-size: 2rem;
-                font-weight: 700;
-                color: white;
-            }
-
-            /* Responsive Footer */
-            @media (max-width: 768px) {
-                .academy-ad {
-                    width: 100%;
-                    justify-content: center;
-                }
-
-                .footer-ad-content {
-                    grid-template-columns: 1fr;
-                    gap: 40px;
-                }
-
-                .footer-ad-left {
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                .footer-academy-logo {
-                    width: 50px;
-                    height: 50px;
-                }
-
-                .footer-ad-title {
-                    font-size: 24px;
-                }
-
-                .footer-features {
-                    grid-template-columns: 1fr;
-                }
-
-                .footer-cta-box {
-                    max-width: 100%;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Header -->
-        <header>
-            <div class="header-content">
-                <div class="logo-container">
-                    <h1 style="color: white; font-size: 24px; font-weight: 700;">
-                        <i class="fas fa-layer-group"></i> Wholesale Starter
-                    </h1>
-                    <div class="tagline">Build Your Perfect Software Stack</div>
-                </div>
-                <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank" class="academy-ad">
-                    <img src="images/Wholesailors-Academy-V2.webp" alt="Wholesailors Academy" class="academy-logo">
-                    <div class="academy-text">
-                        <div class="academy-cta">Join the Wholesailors Academy</div>
-                        <div class="academy-price">Just $0.50/day</div>
-                    </div>
-                </a>
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <h1 style="color: white; font-size: 24px; font-weight: 700;">
+                    <i class="fas fa-layer-group"></i> Wholesale Starter
+                </h1>
+                <div class="tagline">Build Your Perfect Software Stack</div>
             </div>
-        </header>
+            <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank" class="academy-ad">
+                <img src="images/Wholesailors-Academy-V2.webp" alt="Wholesailors Academy" class="academy-logo">
+                <div class="academy-text">
+                    <div class="academy-cta">Join the Wholesailors Academy</div>
+                    <div class="academy-price">Just $0.50/day</div>
+                </div>
+            </a>
+        </div>
+    </header>
 
-        <!-- Main Container -->
-        <div class="container">
-            <!-- Hero Video Section -->
-            <div class="hero-video-section">
-                <h2 class="hero-video-title">Build Your Perfect Wholesaling Stack</h2>
-                <p class="hero-video-description">
-                    Watch this quick guide to learn how to select the right tools and software for your real estate wholesaling business based on your budget and marketing strategy.
-                </p>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/3cLwwNvWwIM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Video Section -->
+        <div class="hero-video-section">
+            <h2 class="hero-video-title">Build Your Perfect Wholesaling Stack</h2>
+            <p class="hero-video-description">
+                Watch this quick guide to learn how to select the right tools and software for your real estate wholesaling business based on your budget and marketing strategy.
+            </p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/3cLwwNvWwIM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Budget Section -->
+        <div class="budget-section">
+            <div class="budget-header">
+                <h2>What's Your Monthly Budget?</h2>
+                <p>Adjust the slider to match your marketing budget. We'll recommend the best tools for your needs.</p>
+            </div>
+
+            <div class="budget-slider-container">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <div class="budget-display" id="budgetDisplay">$0</div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <label for="budgetInput" style="font-size: 14px; color: #666; font-weight: 600;">or enter:</label>
+                        <input type="number" id="budgetInput" class="form-input" min="0" max="10000" step="100" placeholder="0" style="width: 150px; padding: 10px; text-align: center;">
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: linear-gradient(135deg, rgba(193, 162, 91, 0.1) 0%, rgba(105, 82, 47, 0.1) 100%); border-radius: 12px; border: 2px solid var(--gold-light);">
+                        <label for="busyToggle" style="font-size: 14px; color: #333; font-weight: 700; cursor: pointer;">I'm FKN Busy!</label>
+                        <label class="switch">
+                            <input type="checkbox" id="busyToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <input type="range" class="budget-slider" id="budgetSlider" min="0" max="10000" value="0" step="100">
+                <div class="budget-labels">
+                    <span>$0</span>
+                    <span>$2,500</span>
+                    <span>$5,000</span>
+                    <span>$7,500</span>
+                    <span>$10,000</span>
                 </div>
             </div>
 
-            <!-- Budget Section -->
-            <div class="budget-section">
-                <div class="budget-header">
-                    <h2>What's Your Monthly Budget?</h2>
-                    <p>Adjust the slider to match your marketing budget. We'll recommend the best tools for your needs.</p>
-                </div>
+            <!-- Marketing Methods -->
+            <div class="methods-section">
+                <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 20px; color: #333;">
+                    Select Your Marketing Methods
+                </h3>
 
-                <div class="budget-slider-container">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
-                        <div class="budget-display" id="budgetDisplay">$0</div>
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <label for="budgetInput" style="font-size: 14px; color: #666; font-weight: 600;">or enter:</label>
-                            <input type="number" id="budgetInput" class="form-input" min="0" max="10000" step="100" placeholder="0" style="width: 150px; padding: 10px; text-align: center;">
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: linear-gradient(135deg, rgba(193, 162, 91, 0.1) 0%, rgba(105, 82, 47, 0.1) 100%); border-radius: 12px; border: 2px solid var(--gold-light);">
-                            <label for="busyToggle" style="font-size: 14px; color: #333; font-weight: 700; cursor: pointer;">I'm FKN Busy!</label>
-                            <label class="switch">
-                                <input type="checkbox" id="busyToggle">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
+                <!-- Free Methods -->
+                <div class="method-category">
+                    <div class="category-title">
+                        <span>Free Methods</span>
+                        <span class="category-badge">$0</span>
                     </div>
-                    <input type="range" class="budget-slider" id="budgetSlider" min="0" max="10000" value="0" step="100">
-                    <div class="budget-labels">
-                        <span>$0</span>
-                        <span>$2,500</span>
-                        <span>$5,000</span>
-                        <span>$7,500</span>
-                        <span>$10,000</span>
-                    </div>
-                </div>
-
-                <!-- Marketing Methods -->
-                <div class="methods-section">
-                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 20px; color: #333;">
-                        Select Your Marketing Methods
-                    </h3>
-
-                    <!-- Free Methods -->
-                    <div class="method-category">
-                        <div class="category-title">
-                            <span>Free Methods</span>
-                            <span class="category-badge">$0</span>
-                        </div>
-                        <div class="method-banners">
-                            <div class="method-banner" data-method="doorknock" data-cost="0">
-                                <div class="method-info">
-                                    <div class="method-name">Door Knock</div>
-                                    <div class="method-cost">Free</div>
-                                </div>
-                                <div class="method-controls">
-                                    <button class="method-btn" onclick="toggleMethod('doorknock')">+</button>
-                                </div>
+                    <div class="method-banners">
+                        <div class="method-banner" data-method="doorknock" data-cost="0">
+                            <div class="method-info">
+                                <div class="method-name">Door Knock</div>
+                                <div class="method-cost">Free</div>
                             </div>
-                            <div class="method-banner" data-method="driving" data-cost="0">
-                                <div class="method-info">
-                                    <div class="method-name">Driving for Dollars</div>
-                                    <div class="method-cost">Free</div>
-                                </div>
-                                <div class="method-controls">
-                                    <button class="method-btn" onclick="toggleMethod('driving')">+</button>
-                                </div>
-                            </div>
-                            <div class="method-banner" data-method="agent" data-cost="0">
-                                <div class="method-info">
-                                    <div class="method-name">Direct to Agent</div>
-                                    <div class="method-cost">Free</div>
-                                </div>
-                                <div class="method-controls">
-                                    <button class="method-btn" onclick="toggleMethod('agent')">+</button>
-                                </div>
-                            </div>
-                            <div class="method-banner" data-method="bandit" data-cost="0">
-                                <div class="method-info">
-                                    <div class="method-name">Bandit Signs</div>
-                                    <div class="method-cost">Free</div>
-                                </div>
-                                <div class="method-controls">
-                                    <button class="method-btn" onclick="toggleMethod('bandit')">+</button>
-                                </div>
+                            <div class="method-controls">
+                                <button class="method-btn" onclick="toggleMethod('doorknock')">+</button>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- $100 Budget Methods -->
-                    <div class="method-category">
-                        <div class="category-title">
-                            <span>Outbound Methods</span>
-                            <span class="category-badge">$100+</span>
-                        </div>
-                        <div class="method-banners">
-                            <div class="method-banner" data-method="coldcall" data-cost="100">
-                                <div class="method-info">
-                                    <div class="method-name">Cold Call</div>
-                                    <div class="method-cost">$100/month minimum</div>
-                                </div>
-                                <div class="method-controls">
-                                    <button class="method-btn" onclick="toggleMethod('coldcall')">+</button>
-                                </div>
+                        <div class="method-banner" data-method="driving" data-cost="0">
+                            <div class="method-info">
+                                <div class="method-name">Driving for Dollars</div>
+                                <div class="method-cost">Free</div>
                             </div>
-                            <div class="method-banner" data-method="texting" data-cost="100">
-                                <div class="method-info">
-                                    <div class="method-name">Texting</div>
-                                    <div class="method-cost">$100/month minimum</div>
-                                </div>
-                                <div class="method-controls">
-                                    <button class="method-btn" onclick="toggleMethod('texting')">+</button>
-                                </div>
+                            <div class="method-controls">
+                                <button class="method-btn" onclick="toggleMethod('driving')">+</button>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- $500 Budget Methods -->
-                    <div class="method-category">
-                        <div class="category-title">
-                            <span>Premium Methods</span>
-                            <span class="category-badge">$500+</span>
-                        </div>
-                        <div class="method-banners">
-                            <div class="method-banner" data-method="ppl" data-cost="500">
-                                <div class="method-info">
-                                    <div class="method-name">Pay Per Lead (PPL)</div>
-                                    <div class="method-cost">$500/month minimum</div>
-                                </div>
-                                <div class="method-controls">
-                                    <button class="method-btn" onclick="toggleMethod('ppl')">+</button>
-                                </div>
+                        <div class="method-banner" data-method="agent" data-cost="0">
+                            <div class="method-info">
+                                <div class="method-name">Direct to Agent</div>
+                                <div class="method-cost">Free</div>
+                            </div>
+                            <div class="method-controls">
+                                <button class="method-btn" onclick="toggleMethod('agent')">+</button>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- $5000 Budget Methods -->
-                    <div class="method-category">
-                        <div class="category-title">
-                            <span>Advanced Methods</span>
-                            <span class="category-badge">$5,000+</span>
-                        </div>
-                        <div class="method-banners">
-                            <div class="method-banner" data-method="ppc" data-cost="5000">
-                                <div class="method-info">
-                                    <div class="method-name">Pay Per Click (PPC)</div>
-                                    <div class="method-cost">$5,000/month minimum</div>
-                                </div>
-                                <div class="method-controls">
-                                    <button class="method-btn" onclick="toggleMethod('ppc')">+</button>
-                                </div>
+                        <div class="method-banner" data-method="bandit" data-cost="0">
+                            <div class="method-info">
+                                <div class="method-name">Bandit Signs</div>
+                                <div class="method-cost">Free</div>
+                            </div>
+                            <div class="method-controls">
+                                <button class="method-btn" onclick="toggleMethod('bandit')">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Software Recommendations -->
-            <div class="budget-section">
-                <h2 style="font-size: 28px; font-weight: 800; color: #333; margin-bottom: 20px;">
-                    Recommended Software Stack
-                </h2>
-                <p style="color: #666; margin-bottom: 20px;">
-                    Based on your budget and selected methods, here are the tools we recommend:
-                </p>
+                <!-- $100 Budget Methods -->
+                <div class="method-category">
+                    <div class="category-title">
+                        <span>Outbound Methods</span>
+                        <span class="category-badge">$100+</span>
+                    </div>
+                    <div class="method-banners">
+                        <div class="method-banner" data-method="coldcall" data-cost="100">
+                            <div class="method-info">
+                                <div class="method-name">Cold Call</div>
+                                <div class="method-cost">$100/month minimum</div>
+                            </div>
+                            <div class="method-controls">
+                                <button class="method-btn" onclick="toggleMethod('coldcall')">+</button>
+                            </div>
+                        </div>
+                        <div class="method-banner" data-method="texting" data-cost="100">
+                            <div class="method-info">
+                                <div class="method-name">Texting</div>
+                                <div class="method-cost">$100/month minimum</div>
+                            </div>
+                            <div class="method-controls">
+                                <button class="method-btn" onclick="toggleMethod('texting')">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="software-cards" id="softwareCards">
-                    <div class="empty-state">
-                        <i class="fas fa-mouse-pointer"></i>
-                        <p>Select your marketing methods above to see software recommendations</p>
+                <!-- $100 Budget Methods -->
+                <div class="method-category">
+                    <div class="category-title">
+                        <span>Premium Methods</span>
+                        <span class="category-badge">$100+</span>
+                    </div>
+                    <div class="method-banners">
+                        <div class="method-banner" data-method="ppl" data-cost="100">
+                            <div class="method-info">
+                                <div class="method-name">Pay Per Lead (PPL)</div>
+                                <div class="method-cost">$100/month minimum</div>
+                            </div>
+                            <div class="method-controls">
+                                <button class="method-btn" onclick="toggleMethod('ppl')">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- $5000 Budget Methods -->
+                <div class="method-category">
+                    <div class="category-title">
+                        <span>Advanced Methods</span>
+                        <span class="category-badge">$5,000+</span>
+                    </div>
+                    <div class="method-banners">
+                        <div class="method-banner" data-method="ppc" data-cost="5000">
+                            <div class="method-info">
+                                <div class="method-name">Pay Per Click (PPC)</div>
+                                <div class="method-cost">$5,000/month minimum</div>
+                            </div>
+                            <div class="method-controls">
+                                <button class="method-btn" onclick="toggleMethod('ppc')">+</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script>
-            // State management
-            const state = {
-                budget: 0,
-                selectedMethods: new Set(),
-                isBusy: false
-            };
+        <!-- Software Recommendations -->
+        <div class="budget-section">
+            <h2 style="font-size: 28px; font-weight: 800; color: #333; margin-bottom: 20px;">
+                Recommended Software Stack
+            </h2>
+            <p style="color: #666; margin-bottom: 20px;">
+                Based on your budget and selected methods, here are the tools we recommend:
+            </p>
 
-            // Software data (placeholder content)
-            const softwareData = {
-                doorknock: {
-                    starter: {
-                        name: "Spray and Pray",
-                        category: "Door Knock",
-                        description: "Doorknock distressed homes with completely free tools to get started.",
-                        features: [
-                            "Lead Gen: Propwire - $0",
-                            "CRM: Google Sheets - $0",
-                            "Dialer: Google Voice - $0",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
-                        ],
-                        price: "$0/month"
-                    },
-                    captain: {
-                        name: "Targeted Approach",
-                        category: "Door Knock",
-                        description: "Doorknock motivated sellers with professional tools and automation.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87 with coupon 10OFF",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30",
-                            "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
-                        ],
-                        price: "$87/month"
-                    }
-                },
-                driving: {
-                    starter: {
-                        name: "Flyin' Solo",
-                        category: "Driving for Dollars",
-                        description: "Drive and find ugly homes with basic free tools.",
-                        features: [
-                            "Lead Gen: Propwire - $0",
-                            "CRM: Google Sheets - $0",
-                            "Dialer: Google Voice - $0",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
-                        ],
-                        price: "$0/month"
-                    },
-                    intermediate: {
-                        name: "Flyin' Solo",
-                        category: "Driving for Dollars",
-                        description: "Virtually Drive and find ugly homes with basic free tools.",
-                        features: [
-                            "Lead Gen: Deal Machine Pro - $120",
-                            "CRM: Google Sheets - $0",
-                            "Dialer: Google Voice - $0",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
-                        ],
-                        price: "$120/month"
-                    },
-                    captain: {
-                        name: "Fleet of Vehicles",
-                        category: "Driving for Dollars",
-                        description: "Hire drivers to find ugly homes with professional tools.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/dealmachine' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Deal Machine Pro</a> - $120/month",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87",
-                            "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Optional:",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
-                            "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
-                        ],
-                        price: "$207/month"
-                    }
-                },
-                agent: {
-                    starter: {
-                        name: "Individual Outreach",
-                        category: "Direct to Agent",
-                        description: "Individually reach out to agents with basic tools.",
-                        features: [
-                            "Lead Gen: Zillow - $0",
-                            "CRM: Google Sheets - $0",
-                            "Dialer: Google Voice - $0",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
-                        ],
-                        price: "$0/month",
-                        showVirtual: true
-                    },
-                    captain: {
-                        name: "Pocket Listing",
-                        category: "Direct to Agent",
-                        description: "Mass outreach to agents with professional automation.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/batchleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Batchleads</a> - $120",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $200",
-                            "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Email Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Optional:",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
-                            "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
-                        ],
-                        price: "$320/month"
-                    }
-                },
-                bandit: {
-                    starter: {
-                        name: "The Lone Bandit",
-                        category: "Bandit Signs",
-                        description: "Make signs and place them on street corners yourself.",
-                        features: [
-                            "Lead Gen: N/A - $0",
-                            "CRM: Google Sheets - $0",
-                            "Dialer: Google Voice - $0",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
-                        ],
-                        price: "$0/month"
-                    },
-                    captain: {
-                        name: "Outsourced Outlaw",
-                        category: "Bandit Signs",
-                        description: "Hire people to make signs and place them on street corners.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $87 with coupon 10OFF",
-                            "CRM: Xleads - Included",
-                            "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Optional:",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
-                            "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
-                        ],
-                        price: "$87/month"
-                    }
-                },
-                coldcall: {
-                    starter: {
-                        name: "The Single Caller",
-                        category: "Cold Call",
-                        description: "Cold call motivated sellers yourself with professional tools.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
-                            "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Dialer (Power Dialer): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Optional:",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
-                        ],
-                        price: "$87/month",
-                        showVirtual: true,
-                        tierLabel: "Starter"
-                    },
-                    intermediate: {
-                        name: "The Power Caller",
-                        category: "Cold Call",
-                        description: "Cold call with a multi-line power dialer motivated sellers yourself with professional tools.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
-                            "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $200/month",
-                            "Optional:",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
-                        ],
-                        price: "$287/month",
-                        showVirtual: true,
-                    },
-                    captain: {
-                        name: "The Virtual Commander",
-                        category: "Cold Call",
-                        description: "Hire a team of cold callers to scale your operation.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219/month with coupon 10OFF",
-                            "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $200/month",
-                            "Virtual Assistants: - $1000/month each",
-                            "Optional:",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
-                            "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
-                        ],
-                        price: "$1500+/month"
-                    }
-                },
-                texting: {
-                    starter: {
-                        name: "The Single Texter    ",
-                        category: "Texting",
-                        description: "No starter plan available for text blasting.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
-                            "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Cost per Text: $0.01",
-                            "Optional:",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
-                        ],
-                        price: "$100+/month",
-                        showVirtual: true
-                    },
-                    captain: {
-                        name: "The Message Master",
-                        category: "Texting",
-                        description: "Text blast motivated sellers with professional automation.",
-                        features: [
-                            "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
-                            "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Cost per Text: $0.01",
-                            "Optional:",
-                            "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
-                            "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
-                        ],
-                        price: "$500+/month"
-                    }
-                },
-                ppl: {
-                    starter: {
-                        name: "The Lead Quartermaster",
-                        category: "Pay Per Lead",
-                        description: "Non-exclusive leads for budget-conscious wholesalers.",
-                        features: [
-                            "Lead Gen: <a href='https://getdollarleads.com/#pricing' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Dollar Leads Club</a> - $97/month",
-                            "Non-exclusive Leads - $1/each",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
-                            "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+            <div class="software-cards" id="softwareCards">
+                <div class="empty-state">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <p>Select your marketing methods above to see software recommendations</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                        ],
-                        price: "$+/month",
-                        showVirtual: true,
-                        tierLabel: "Starter"
-                    },
-                    captain: {
-                        name: "The Lead Captain",
-                        category: "Pay Per Lead",
-                        description: "Premium exclusive leads for serious wholesalers.",
-                        features: [
-                            "Lead Gen: <a href='https://getdollarleads.com/#pricing' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Dollar Leads Club - Diamond Plan</a> - $497/month",
-                            "Exclusive Leads - $8.88/each",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
-                            "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
-                            "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
-                        ],
-                        price: "$3000+/month"
-                    }
-                },
-                ppc: {
+    <script>
+        // State management
+        const state = {
+            budget: 0,
+            selectedMethods: new Set(),
+            isBusy: false
+        };
 
-                    captain: {
-                        name: "The PPC Admiral",
-                        category: "Pay Per Click",
-                        description: "Full-service PPC campaign management for serious investors.",
-                        features: [
-                            "Management: <a href='https://get.batemancollective.com/relp/?_from=maximilian44' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Bateman Collective</a> - $2,000",
-                            "Google Leads - $50-500/each",
-                            "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
-                            "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
-                            "Optional:",
-                            "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
-                            "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
-                        ],
-                        price: "$5000+/month"
-                    }
+        // Software data (placeholder content)
+        const softwareData = {
+            doorknock: {
+                starter: {
+                    name: "Spray and Pray",
+                    category: "Door Knock",
+                    description: "Doorknock distressed homes with completely free tools to get started.",
+                    features: [
+                        "Lead Gen: Propwire - $0",
+                        "CRM: Google Sheets - $0",
+                        "Dialer: Google Voice - $0",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$0/month"
+                },
+                captain: {
+                    name: "Targeted Approach",
+                    category: "Door Knock",
+                    description: "Doorknock motivated sellers with professional tools and automation.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87 with coupon 10OFF",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
+                    ],
+                    price: "$87/month"
                 }
-            };
+            },
+            driving: {
+                starter: {
+                    name: "Flyin' Solo",
+                    category: "Driving for Dollars",
+                    description: "Drive and find ugly homes with basic free tools.",
+                    features: [
+                        "Lead Gen: Propwire - $0",
+                        "CRM: Google Sheets - $0",
+                        "Dialer: Google Voice - $0",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$0/month"
+                },
+                intermediate: {
+                    name: "Flyin' Solo",
+                    category: "Driving for Dollars",
+                    description: "Virtually Drive and find ugly homes with basic free tools.",
+                    features: [
+                        "Lead Gen: Deal Machine Pro - $120",
+                        "CRM: Google Sheets - $0",
+                        "Dialer: Google Voice - $0",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$120/month"
+                },
+                captain: {
+                    name: "Fleet of Vehicles",
+                    category: "Driving for Dollars",
+                    description: "Hire drivers to find ugly homes with professional tools.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/dealmachine' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Deal Machine Pro</a> - $120/month",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87",
+                        "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
+                    ],
+                    price: "$207/month"
+                }
+            },
+            agent: {
+                starter: {
+                    name: "Individual Outreach",
+                    category: "Direct to Agent",
+                    description: "Individually reach out to agents with basic tools.",
+                    features: [
+                        "Lead Gen: Zillow - $0",
+                        "CRM: Google Sheets - $0",
+                        "Dialer: Google Voice - $0",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$0/month",
+                    showVirtual: true
+                },
+                captain: {
+                    name: "Pocket Listing",
+                    category: "Direct to Agent",
+                    description: "Mass outreach to agents with professional automation.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/batchleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Batchleads</a> - $120",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $200",
+                        "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Email Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
+                    ],
+                    price: "$320/month"
+                }
+            },
+            bandit: {
+                starter: {
+                    name: "The Lone Bandit",
+                    category: "Bandit Signs",
+                    description: "Make signs and place them on street corners yourself.",
+                    features: [
+                        "Lead Gen: N/A - $0",
+                        "CRM: Google Sheets - $0",
+                        "Dialer: Google Voice - $0",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$0/month"
+                },
+                captain: {
+                    name: "Outsourced Outlaw",
+                    category: "Bandit Signs",
+                    description: "Hire people to make signs and place them on street corners.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $87 with coupon 10OFF",
+                        "CRM: Xleads - Included",
+                        "Dialer (Power Single Line): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
+                    ],
+                    price: "$87/month"
+                }
+            },
+            coldcall: {
+                starter: {
+                    name: "The Single Caller",
+                    category: "Cold Call",
+                    description: "Cold call motivated sellers yourself with professional tools.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Dialer): <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$87/month",
+                    showVirtual: true,
+                    tierLabel: "Starter"
+                },
+                intermediate: {
+                    name: "The Power Caller",
+                    category: "Cold Call",
+                    description: "Cold call with a multi-line power dialer motivated sellers yourself with professional tools.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $200/month",
+                        "Optional:",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$287/month",
+                    showVirtual: true,
+                },
+                captain: {
+                    name: "The Virtual Commander",
+                    category: "Cold Call",
+                    description: "Hire a team of cold callers to scale your operation.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219/month with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Dialer (Power Multi Line): <a href='https://maximiliandier.com/enzo' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Enzo</a> - $200/month",
+                        "Virtual Assistants: - $1000/month each",
+                        "Optional:",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
+                    ],
+                    price: "$1500+/month"
+                }
+            },
+            texting: {
+                starter: {
+                    name: "The Single Texter    ",
+                    category: "Texting",
+                    description: "No starter plan available for text blasting.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Cost per Text: $0.01",
+                        "Optional:",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
+                    ],
+                    price: "$100+/month",
+                    showVirtual: true
+                },
+                captain: {
+                    name: "The Message Master",
+                    category: "Texting",
+                    description: "Text blast motivated sellers with professional automation.",
+                    features: [
+                        "Lead Gen: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> X Plan - $219 with coupon 10OFF",
+                        "Skiptracing: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Text Blaster: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Cost per Text: $0.01",
+                        "Optional:",
+                        "Comping (Non-disclosure States): <a href='https://maximiliandier.com/propelio' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Propelio</a> - $30/month",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
+                    ],
+                    price: "$500+/month"
+                }
+            },
+            ppl: {
+                starter: {
+                    name: "The Lead Quartermaster",
+                    category: "Pay Per Lead",
+                    description: "Non-exclusive leads for budget-conscious wholesalers.",
+                    features: [
+                        "Lead Gen: <a href='https://getdollarleads.com/#pricing' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Dollar Leads Club</a> - $97/month",
+                        "Non-exclusive Leads - $1/each",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month"
 
-            // Initialize
-            const budgetSlider = document.getElementById('budgetSlider');
-            const budgetDisplay = document.getElementById('budgetDisplay');
-            const budgetInput = document.getElementById('budgetInput');
-            const busyToggle = document.getElementById('busyToggle');
+                    ],
+                    price: "$+/month",
+                    showVirtual: true,
+                    tierLabel: "Starter"
+                },
+                captain: {
+                    name: "The Lead Captain",
+                    category: "Pay Per Lead",
+                    description: "Premium exclusive leads for serious wholesalers.",
+                    features: [
+                        "Lead Gen: <a href='https://getdollarleads.com/#pricing' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Dollar Leads Club - Diamond Plan</a> - $497/month",
+                        "Exclusive Leads - $8.88/each",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
+                    ],
+                    price: "$3000+/month"
+                }
+            },
+            ppc: {
 
-            function updateBudget(value) {
-                state.budget = parseInt(value) || 0;
-                budgetDisplay.textContent = `$${state.budget.toLocaleString()}`;
-                budgetSlider.value = state.budget;
-                budgetInput.value = state.budget;
-                updateMethodAvailability();
-                renderSoftwareCards();
+                captain: {
+                    name: "The PPC Admiral",
+                    category: "Pay Per Click",
+                    description: "Full-service PPC campaign management for serious investors.",
+                    features: [
+                        "Management: <a href='https://get.batemancollective.com/relp/?_from=maximilian44' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Bateman Collective</a> - $2,000",
+                        "Google Leads - $50-500/each",
+                        "CRM: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - $87/month with coupon 10OFF",
+                        "Dialer: <a href='https://maximiliandier.com/xleads' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Xleads</a> - Included",
+                        "Optional:",
+                        "Education: <a href='https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Wholesailors Academy</a> - $20/month",
+                        "Dispo: <a href='https://maximiliandier.com/investorlift' target='_blank' style='color: var(--gold-light); text-decoration: underline;'>Investorlift</a> - $2,000/quarter"
+                    ],
+                    price: "$5000+/month"
+                }
             }
+        };
 
-            budgetSlider.addEventListener('input', function() {
-                updateBudget(this.value);
-            });
+        // Initialize
+        const budgetSlider = document.getElementById('budgetSlider');
+        const budgetDisplay = document.getElementById('budgetDisplay');
+        const budgetInput = document.getElementById('budgetInput');
+        const busyToggle = document.getElementById('busyToggle');
 
-            budgetInput.addEventListener('input', function() {
-                updateBudget(this.value);
-            });
+        function updateBudget(value) {
+            state.budget = parseInt(value) || 0;
+            budgetDisplay.textContent = `$${state.budget.toLocaleString()}`;
+            budgetSlider.value = state.budget;
+            budgetInput.value = state.budget;
+            updateMethodAvailability();
+            renderSoftwareCards();
+        }
 
-            busyToggle.addEventListener('change', function() {
-                state.isBusy = this.checked;
-                renderSoftwareCards();
-            });
+        budgetSlider.addEventListener('input', function() {
+            updateBudget(this.value);
+        });
 
-            function updateMethodAvailability() {
-                document.querySelectorAll('.method-banner').forEach(banner => {
-                    const cost = parseInt(banner.dataset.cost);
-                    const method = banner.dataset.method;
-                    const isActive = state.selectedMethods.has(method);
+        budgetInput.addEventListener('input', function() {
+            updateBudget(this.value);
+        });
 
-                    if (cost > state.budget && !isActive) {
-                        banner.classList.add('disabled');
-                        banner.querySelector('.method-btn').disabled = true;
-                    } else {
-                        banner.classList.remove('disabled');
-                        banner.querySelector('.method-btn').disabled = false;
-                    }
-                });
-            }
+        busyToggle.addEventListener('change', function() {
+            state.isBusy = this.checked;
+            renderSoftwareCards();
+        });
 
-            function toggleMethod(method) {
-                const banner = document.querySelector(`[data-method="${method}"]`);
+        function updateMethodAvailability() {
+            document.querySelectorAll('.method-banner').forEach(banner => {
                 const cost = parseInt(banner.dataset.cost);
+                const method = banner.dataset.method;
+                const isActive = state.selectedMethods.has(method);
 
-                if (cost > state.budget && !state.selectedMethods.has(method)) {
-                    return;
-                }
-
-                if (state.selectedMethods.has(method)) {
-                    state.selectedMethods.delete(method);
-                    banner.classList.remove('active');
-                    banner.querySelector('.method-btn').textContent = '+';
+                if (cost > state.budget && !isActive) {
+                    banner.classList.add('disabled');
+                    banner.querySelector('.method-btn').disabled = true;
                 } else {
-                    state.selectedMethods.add(method);
-                    banner.classList.add('active');
-                    banner.querySelector('.method-btn').textContent = '-';
+                    banner.classList.remove('disabled');
+                    banner.querySelector('.method-btn').disabled = false;
                 }
+            });
+        }
 
-                renderSoftwareCards();
+        function toggleMethod(method) {
+            const banner = document.querySelector(`[data-method="${method}"]`);
+            const cost = parseInt(banner.dataset.cost);
+
+            if (cost > state.budget && !state.selectedMethods.has(method)) {
+                return;
             }
 
-            function renderSoftwareCards() {
-                const container = document.getElementById('softwareCards');
+            if (state.selectedMethods.has(method)) {
+                state.selectedMethods.delete(method);
+                banner.classList.remove('active');
+                banner.querySelector('.method-btn').textContent = '+';
+            } else {
+                state.selectedMethods.add(method);
+                banner.classList.add('active');
+                banner.querySelector('.method-btn').textContent = '-';
+            }
 
-                // If "I'm FKN Busy!" is enabled, show predefined cards
-                if (state.isBusy) {
-                    let html = '';
+            renderSoftwareCards();
+        }
 
-                    // Agent: Starter + Captain
-                    ['starter', 'captain'].forEach(tier => {
-                        const card = softwareData.agent[tier];
-                        const showVirtual = tier === 'captain' || card.showVirtual;
-                        const tierLabel = card.tierLabel || tier;
+        function renderSoftwareCards() {
+            const container = document.getElementById('softwareCards');
 
-                        html += `
-                            <div class="software-card ${tier}">
-                                ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
-                                <span class="card-tier ${tier}">${tierLabel}</span>
-                                <div class="card-name">${card.name}</div>
-                                <div class="card-category">${card.category}</div>
-                                <div class="card-description">${card.description}</div>
-                                <ul class="card-features">
-                                    ${card.features.map(feature => {
-                                        if (feature.trim() === 'Optional:') {
-                                            return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
-                                        }
-                                        return `<li><i class="fas fa-check"></i> ${feature}</li>`;
-                                    }).join('')}
-                                </ul>
-                                <div class="card-price">${card.price}</div>
-                            </div>
-                        `;
-                    });
-
-                    // Bandit: Starter + Captain
-                    ['starter', 'captain'].forEach(tier => {
-                        const card = softwareData.bandit[tier];
-                        const showVirtual = tier === 'captain' || card.showVirtual;
-                        const tierLabel = card.tierLabel || tier;
-
-                        html += `
-                            <div class="software-card ${tier}">
-                                ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
-                                <span class="card-tier ${tier}">${tierLabel}</span>
-                                <div class="card-name">${card.name}</div>
-                                <div class="card-category">${card.category}</div>
-                                <div class="card-description">${card.description}</div>
-                                <ul class="card-features">
-                                    ${card.features.map(feature => {
-                                        if (feature.trim() === 'Optional:') {
-                                            return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
-                                        }
-                                        return `<li><i class="fas fa-check"></i> ${feature}</li>`;
-                                    }).join('')}
-                                </ul>
-                                <div class="card-price">${card.price}</div>
-                            </div>
-                        `;
-                    });
-
-                    // Cold Call: Captain only
-                    const coldcallCard = softwareData.coldcall.captain;
-                    html += `
-                        <div class="software-card captain">
-                            <div class="virtual-ribbon">Virtual</div>
-                            <span class="card-tier captain">captain</span>
-                            <div class="card-name">${coldcallCard.name}</div>
-                            <div class="card-category">${coldcallCard.category}</div>
-                            <div class="card-description">${coldcallCard.description}</div>
-                            <ul class="card-features">
-                                ${coldcallCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
-                            </ul>
-                            <div class="card-price">${coldcallCard.price}</div>
-                        </div>
-                    `;
-
-                    // Texting: Captain only
-                    const textingCard = softwareData.texting.captain;
-                    html += `
-                        <div class="software-card captain">
-                            <div class="virtual-ribbon">Virtual</div>
-                            <span class="card-tier captain">captain</span>
-                            <div class="card-name">${textingCard.name}</div>
-                            <div class="card-category">${textingCard.category}</div>
-                            <div class="card-description">${textingCard.description}</div>
-                            <ul class="card-features">
-                                ${textingCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
-                            </ul>
-                            <div class="card-price">${textingCard.price}</div>
-                        </div>
-                    `;
-
-                    // PPL: Starter + Captain
-                    ['starter', 'captain'].forEach(tier => {
-                        const card = softwareData.ppl[tier];
-                        const showVirtual = tier === 'captain' || card.showVirtual;
-                        const tierLabel = card.tierLabel || tier;
-
-                        html += `
-                            <div class="software-card ${tier}">
-                                ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
-                                <span class="card-tier ${tier}">${tierLabel}</span>
-                                <div class="card-name">${card.name}</div>
-                                <div class="card-category">${card.category}</div>
-                                <div class="card-description">${card.description}</div>
-                                <ul class="card-features">
-                                    ${card.features.map(feature => {
-                                        if (feature.trim() === 'Optional:') {
-                                            return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
-                                        }
-                                        return `<li><i class="fas fa-check"></i> ${feature}</li>`;
-                                    }).join('')}
-                                </ul>
-                                <div class="card-price">${card.price}</div>
-                            </div>
-                        `;
-                    });
-
-                    // PPC: Captain only
-                    const ppcCard = softwareData.ppc.captain;
-                    html += `
-                        <div class="software-card captain">
-                            <div class="virtual-ribbon">Virtual</div>
-                            <span class="card-tier captain">captain</span>
-                            <div class="card-name">${ppcCard.name}</div>
-                            <div class="card-category">${ppcCard.category}</div>
-                            <div class="card-description">${ppcCard.description}</div>
-                            <ul class="card-features">
-                                ${ppcCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
-                            </ul>
-                            <div class="card-price">${ppcCard.price}</div>
-                        </div>
-                    `;
-
-                    container.innerHTML = html;
-                    return;
-                }
-
-                // Normal flow: check if methods are selected
-                if (state.selectedMethods.size === 0) {
-                    container.innerHTML = `
-                        <div class="empty-state">
-                            <i class="fas fa-mouse-pointer"></i>
-                            <p>Select your marketing methods above to see software recommendations</p>
-                        </div>
-                    `;
-                    return;
-                }
-
+            // If "I'm FKN Busy!" is enabled, show predefined cards
+            if (state.isBusy) {
                 let html = '';
 
-                state.selectedMethods.forEach(method => {
-                    const software = softwareData[method];
-                    if (!software) return;
-
-                    // Determine which tier to show based on budget
-                    let tier = 'starter';
-                    let card = software.starter;
-
-                    // Check if intermediate tier exists
-                    if (software.intermediate) {
-                        const intermediatePriceStr = software.intermediate.price.replace(/[^0-9]/g, '');
-                        const intermediatePrice = parseInt(intermediatePriceStr);
-                        if (state.budget >= intermediatePrice) {
-                            tier = 'intermediate';
-                            card = software.intermediate;
-                        }
-                    }
-
-                    // Check if captain tier exists and budget is high enough
-                    if (software.captain) {
-                        const captainPriceStr = software.captain.price.replace(/[^0-9]/g, '');
-                        const captainPrice = parseInt(captainPriceStr);
-                        if (state.budget >= captainPrice) {
-                            tier = 'captain';
-                            card = software.captain;
-                        }
-                    }
-
-                    // Show virtual ribbon on captain tier, or if card has showVirtual flag
+                // Agent: Starter + Captain
+                ['starter', 'captain'].forEach(tier => {
+                    const card = softwareData.agent[tier];
                     const showVirtual = tier === 'captain' || card.showVirtual;
-
-                    // Use custom tier label if provided, otherwise use the tier name
                     const tierLabel = card.tierLabel || tier;
 
                     html += `
@@ -1456,66 +1285,237 @@
                     `;
                 });
 
+                // Bandit: Starter + Captain
+                ['starter', 'captain'].forEach(tier => {
+                    const card = softwareData.bandit[tier];
+                    const showVirtual = tier === 'captain' || card.showVirtual;
+                    const tierLabel = card.tierLabel || tier;
+
+                    html += `
+                        <div class="software-card ${tier}">
+                            ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
+                            <span class="card-tier ${tier}">${tierLabel}</span>
+                            <div class="card-name">${card.name}</div>
+                            <div class="card-category">${card.category}</div>
+                            <div class="card-description">${card.description}</div>
+                            <ul class="card-features">
+                                ${card.features.map(feature => {
+                                    if (feature.trim() === 'Optional:') {
+                                        return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
+                                    }
+                                    return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+                                }).join('')}
+                            </ul>
+                            <div class="card-price">${card.price}</div>
+                        </div>
+                    `;
+                });
+
+                // Cold Call: Captain only
+                const coldcallCard = softwareData.coldcall.captain;
+                html += `
+                    <div class="software-card captain">
+                        <div class="virtual-ribbon">Virtual</div>
+                        <span class="card-tier captain">captain</span>
+                        <div class="card-name">${coldcallCard.name}</div>
+                        <div class="card-category">${coldcallCard.category}</div>
+                        <div class="card-description">${coldcallCard.description}</div>
+                        <ul class="card-features">
+                            ${coldcallCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                        </ul>
+                        <div class="card-price">${coldcallCard.price}</div>
+                    </div>
+                `;
+
+                // Texting: Captain only
+                const textingCard = softwareData.texting.captain;
+                html += `
+                    <div class="software-card captain">
+                        <div class="virtual-ribbon">Virtual</div>
+                        <span class="card-tier captain">captain</span>
+                        <div class="card-name">${textingCard.name}</div>
+                        <div class="card-category">${textingCard.category}</div>
+                        <div class="card-description">${textingCard.description}</div>
+                        <ul class="card-features">
+                            ${textingCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                        </ul>
+                        <div class="card-price">${textingCard.price}</div>
+                    </div>
+                `;
+
+                // PPL: Starter + Captain
+                ['starter', 'captain'].forEach(tier => {
+                    const card = softwareData.ppl[tier];
+                    const showVirtual = tier === 'captain' || card.showVirtual;
+                    const tierLabel = card.tierLabel || tier;
+
+                    html += `
+                        <div class="software-card ${tier}">
+                            ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
+                            <span class="card-tier ${tier}">${tierLabel}</span>
+                            <div class="card-name">${card.name}</div>
+                            <div class="card-category">${card.category}</div>
+                            <div class="card-description">${card.description}</div>
+                            <ul class="card-features">
+                                ${card.features.map(feature => {
+                                    if (feature.trim() === 'Optional:') {
+                                        return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
+                                    }
+                                    return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+                                }).join('')}
+                            </ul>
+                            <div class="card-price">${card.price}</div>
+                        </div>
+                    `;
+                });
+
+                // PPC: Captain only
+                const ppcCard = softwareData.ppc.captain;
+                html += `
+                    <div class="software-card captain">
+                        <div class="virtual-ribbon">Virtual</div>
+                        <span class="card-tier captain">captain</span>
+                        <div class="card-name">${ppcCard.name}</div>
+                        <div class="card-category">${ppcCard.category}</div>
+                        <div class="card-description">${ppcCard.description}</div>
+                        <ul class="card-features">
+                            ${ppcCard.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                        </ul>
+                        <div class="card-price">${ppcCard.price}</div>
+                    </div>
+                `;
+
                 container.innerHTML = html;
+                return;
             }
 
-            // Initialize on load
-            updateMethodAvailability();
-        </script>
+            // Normal flow: check if methods are selected
+            if (state.selectedMethods.size === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-mouse-pointer"></i>
+                        <p>Select your marketing methods above to see software recommendations</p>
+                    </div>
+                `;
+                return;
+            }
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-ad-section">
-                <div class="footer-ad-content">
-                    <div class="footer-ad-left">
-                        <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank">
-                            <img src="images/Wholesailors-Academy-V2.webp" alt="Wholesailors Academy" class="footer-academy-logo">
+            let html = '';
+
+            state.selectedMethods.forEach(method => {
+                const software = softwareData[method];
+                if (!software) return;
+
+                // Determine which tier to show based on budget
+                let tier = 'starter';
+                let card = software.starter;
+
+                // Check if intermediate tier exists
+                if (software.intermediate) {
+                    const intermediatePriceStr = software.intermediate.price.replace(/[^0-9]/g, '');
+                    const intermediatePrice = parseInt(intermediatePriceStr);
+                    if (state.budget >= intermediatePrice) {
+                        tier = 'intermediate';
+                        card = software.intermediate;
+                    }
+                }
+
+                // Check if captain tier exists and budget is high enough
+                if (software.captain) {
+                    const captainPriceStr = software.captain.price.replace(/[^0-9]/g, '');
+                    const captainPrice = parseInt(captainPriceStr);
+                    if (state.budget >= captainPrice) {
+                        tier = 'captain';
+                        card = software.captain;
+                    }
+                }
+
+                // Show virtual ribbon on captain tier, or if card has showVirtual flag
+                const showVirtual = tier === 'captain' || card.showVirtual;
+
+                // Use custom tier label if provided, otherwise use the tier name
+                const tierLabel = card.tierLabel || tier;
+
+                html += `
+                    <div class="software-card ${tier}">
+                        ${showVirtual ? '<div class="virtual-ribbon">Virtual</div>' : ''}
+                        <span class="card-tier ${tier}">${tierLabel}</span>
+                        <div class="card-name">${card.name}</div>
+                        <div class="card-category">${card.category}</div>
+                        <div class="card-description">${card.description}</div>
+                        <ul class="card-features">
+                            ${card.features.map(feature => {
+                                if (feature.trim() === 'Optional:') {
+                                    return `<li style="font-weight: 700; margin-top: 12px;">${feature}</li>`;
+                                }
+                                return `<li><i class="fas fa-check"></i> ${feature}</li>`;
+                            }).join('')}
+                        </ul>
+                        <div class="card-price">${card.price}</div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Initialize on load
+        updateMethodAvailability();
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-ad-section">
+            <div class="footer-ad-content">
+                <div class="footer-ad-left">
+                    <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank">
+                        <img src="images/Wholesailors-Academy-V2.webp" alt="Wholesailors Academy" class="footer-academy-logo">
+                    </a>
+                    <div class="footer-ad-text">
+                        <h3 class="footer-ad-title">Ready to Master Wholesaling?</h3>
+                        <p class="footer-ad-description">Join 1,000+ students learning proven strategies to flip houses to hedge funds, build portfolios, and scale their real estate wholesaling business.</p>
+                        <div class="footer-features">
+                            <div class="footer-feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Live Weekly Coaching</span>
+                            </div>
+                            <div class="footer-feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Private Community Access</span>
+                            </div>
+                            <div class="footer-feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Proven Deal Scripts & Templates</span>
+                            </div>
+                            <div class="footer-feature">
+                                <span class="feature-icon">✓</span>
+                                <span>Exclusive Buyer Network</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-ad-right">
+                    <div class="footer-cta-box">
+                        <div class="footer-price-tag">
+                            <span class="footer-price-label">START TODAY FOR ONLY</span>
+                            <span class="footer-price">$0.50/day</span>
+                            <span class="footer-price-subtext">That's just $15/month</span>
+                        </div>
+                        <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank" class="footer-cta-btn">
+                            Join Wholesailors Academy Now →
                         </a>
-                        <div class="footer-ad-text">
-                            <h3 class="footer-ad-title">Ready to Master Wholesaling?</h3>
-                            <p class="footer-ad-description">Join 1,000+ students learning proven strategies to flip houses to hedge funds, build portfolios, and scale their real estate wholesaling business.</p>
-                            <div class="footer-features">
-                                <div class="footer-feature">
-                                    <span class="feature-icon">✓</span>
-                                    <span>Live Weekly Coaching</span>
-                                </div>
-                                <div class="footer-feature">
-                                    <span class="feature-icon">✓</span>
-                                    <span>Private Community Access</span>
-                                </div>
-                                <div class="footer-feature">
-                                    <span class="feature-icon">✓</span>
-                                    <span>Proven Deal Scripts & Templates</span>
-                                </div>
-                                <div class="footer-feature">
-                                    <span class="feature-icon">✓</span>
-                                    <span>Exclusive Buyer Network</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-ad-right">
-                        <div class="footer-cta-box">
-                            <div class="footer-price-tag">
-                                <span class="footer-price-label">START TODAY FOR ONLY</span>
-                                <span class="footer-price">$0.50/day</span>
-                                <span class="footer-price-subtext">That's just $15/month</span>
-                            </div>
-                            <a href="https://www.skool.com/how-to-wholesale/about?ref=26880ff623564ca0a17ff78586c11984" target="_blank" class="footer-cta-btn">
-                                Join Wholesailors Academy Now →
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-content">
-                    <div class="footer-logo">Wholesale Starter</div>
-                    <p class="footer-text">
-                        © 2025 Wholesailors Academy. All rights reserved. | Wholesale Starter - Build Your Perfect Software Stack
-                    </p>
-                </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-content">
+                <div class="footer-logo">Wholesale Starter</div>
+                <p class="footer-text">
+                    © 2025 Wholesailors Academy. All rights reserved. | Wholesale Starter - Build Your Perfect Software Stack
+                </p>
             </div>
-        </footer>
-    </body>
-    </html>
+        </div>
+    </footer>
+</body>
+</html>
